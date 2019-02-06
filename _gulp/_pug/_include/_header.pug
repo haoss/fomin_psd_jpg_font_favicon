@@ -1,0 +1,29 @@
+// Header
+header.header
+  .container
+    
+    -var navigation = { 'Производство': '#', 'Продукция': '#', 'Проекты': '#', 'Реставрация': '#', 'О нас': '#', 'Контакты': '#'};
+    
+    nav.header__navigation(role="navigation")
+      ul
+        each val, key in navigation
+          if active === key
+            li.active
+              a(href=val, title=key)= key
+          else
+            li
+              a(href=val, title=key)= key
+
+    .header__phone
+      div
+        a(href="tel:") 8 (800) 581-25-82
+      div
+        a(href="tel:") 8 (903) 581-25-82
+
+    .header__logo
+      span
+        img(src="./img/logo.png", alt="")
+
+    .header__tagline Мастерская художественной мебели фомина
+
+.header-holder
