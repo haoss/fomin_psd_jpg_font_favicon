@@ -2,9 +2,11 @@
 header.header
   .container
     
-    -var navigation = { 'Производство': '#', 'Продукция': '#', 'Проекты': '#', 'Реставрация': '#', 'О нас': '#', 'Контакты': '#'};
-    
     nav.header__navigation(role="navigation")
+      button.header__btn.hamburger.hamburger--arrowalt-r(type='button')
+        span.hamburger-box
+          span.hamburger-inner
+
       ul
         each val, key in navigation
           if active === key
@@ -24,6 +26,7 @@ header.header
       span
         img(src="./img/logo.png", alt="")
 
-    .header__tagline Мастерская художественной мебели фомина
+    .header__tagline
+      div Мастерская художественной мебели фомина
 
 .header-holder

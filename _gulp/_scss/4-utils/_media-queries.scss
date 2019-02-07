@@ -17,7 +17,29 @@
 }
 
 @media only screen and (max-width: 991px) {
-
+  .header {
+    &__navigation {
+      &>ul {
+        &>li {
+          &+li {
+            margin-left: 25px;
+          }
+          &:nth-of-type(3) {
+            &+li {
+              margin-left: 195px;
+            }
+          }
+        }
+      }
+    }
+    &__phone {
+      &>div {
+        &+div {
+          margin-left: 192px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {

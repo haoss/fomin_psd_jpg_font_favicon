@@ -8,27 +8,54 @@ html(lang="ru")
   include ./_include/_head
 
   body
-    
-    // Preloader
-    include ./_include/_preloader
-    
-    include ./_include/_header
 
-    // Main slider
-    .main-slider
-      .main-slider__wrapper
-    
-    // Content
-    .content
-      .container
-        
-        h1 Главная 2
-        
-        p На сегодняшний день можно с полной ответственностью утверждать, что мы готовы справиться с задачей любой степени сложности, ведь изготовление эксклюзивной мебели стало для нас главным делом всей жизни. Наши сотрудники, имеющие многолетний опыт работы, регулярно посещают профессиональные семинары и тренинги, направленные на повышение квалификации. Такой подход к подготовке персонала позволяет нам всегда предоставлять услуги класса люкс, выполняя все пожелания Клиентов точно и в срок.
+    .mobile
+      -var navigation = { 'Производство': '#', 'Продукция': '#', 'Проекты': '#', 'Реставрация': '#', 'О нас': '#', 'Контакты': '#'};
 
+      button.mobile__btn.hamburger.hamburger--arrowalt-r(type='button')
+        span.hamburger-box
+          span.hamburger-inner
+
+      nav.mobile__navigation(role="navigation")
+        ul
+          each val, key in navigation
+            if active === key
+              li.active
+                a(href=val, title=key)= key
+            else
+              li
+                a(href=val, title=key)= key
+      
+      .mobile__phone
+        div
+          a(href="tel:") 8 (800) 581-25-82
+        div
+          a(href="tel:") 8 (903) 581-25-82
+
+      .mobile__email
+        a(href="mailto:") ipfomin@inbox.ru
     
-    include ./_include/_footer
-    div(style="height: 1000px; background-color: #000")
+    .base
+    
+      // Preloader
+      include ./_include/_preloader
+      include ./_include/_header
+
+      // Main slider
+      .main-slider
+        .main-slider__wrapper
+      
+      // Content
+      .content
+        .container
+          
+          h1 Главная 2
+          
+          p На сегодняшний день можно с полной ответственностью утверждать, что мы готовы справиться с задачей любой степени сложности, ведь изготовление эксклюзивной мебели стало для нас главным делом всей жизни. Наши сотрудники, имеющие многолетний опыт работы, регулярно посещают профессиональные семинары и тренинги, направленные на повышение квалификации. Такой подход к подготовке персонала позволяет нам всегда предоставлять услуги класса люкс, выполняя все пожелания Клиентов точно и в срок.
+
+      
+      include ./_include/_footer
+      div(style="height: 1000px; background-color: #000")
 
     // Load Scripts
     include ./_include/_footer-js

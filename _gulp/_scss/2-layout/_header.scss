@@ -101,7 +101,7 @@
     &>div {
       transform: translateX(-16px);
       &+div {
-        padding-left: 226px;
+        margin-left: 226px;
       }
     }
   }
@@ -121,5 +121,11 @@
     width: 555px;
     text-align: center;
     border-radius: 25px;
+    &>div {
+      display: inline-block;
+    }
+  }
+  &__btn {
+    display: none;
   }
 }
