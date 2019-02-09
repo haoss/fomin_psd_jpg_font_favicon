@@ -9,31 +9,8 @@ html(lang="ru")
 
   body
 
-    .mobile
-      -var navigation = { 'Производство': '#', 'Продукция': '#', 'Проекты': '#', 'Реставрация': '#', 'О нас': '#', 'Контакты': '#'};
-
-      button.mobile__btn.hamburger.hamburger--arrowalt-r(type='button')
-        span.hamburger-box
-          span.hamburger-inner
-
-      nav.mobile__navigation(role="navigation")
-        ul
-          each val, key in navigation
-            if active === key
-              li.active
-                a(href=val, title=key)= key
-            else
-              li
-                a(href=val, title=key)= key
-      
-      .mobile__phone
-        div
-          a(href="tel:") 8 (800) 581-25-82
-        div
-          a(href="tel:") 8 (903) 581-25-82
-
-      .mobile__email
-        a(href="mailto:") ipfomin@inbox.ru
+    // Mobile navigation
+    include ./_include/_mobile
     
     .base
     
@@ -44,14 +21,62 @@ html(lang="ru")
       // Main slider
       .main-slider
         .main-slider__wrapper
+          - for (var i=0; i<5; i++) {
+          div
+            .main-slider__block(style="background-image: url('./tmp/main-slider/main-slider-top-1.jpg');")
+              .main-slider__content
+                a(href="#!").main-slider__link в портфолио
+                  i.ion-ios-arrow-thin-right
+                a(href="#!").main-slider__title Лестница на Рублевке
+                  i.ion-ios-arrow-thin-right
+                p г.Москва, Рублевка
+          - }
+
+      // Catalog navigation
+      .catalog__navigation
+        .container
+          ul
+            li: a(href="#!"): span ОБЩЕСТВЕННЫЕ ИНТЕРЬЕРЫ
+            li: a(href="#!"): span кабинеты
+            li: a(href="#!"): span корпусная мебель
+            li: a(href="#!"): span гардеробные
+            li: a(href="#!"): span двери
+            li: a(href="#!"): span порталы
       
       // Content
       .content
-        .container
-          
-          h1 Главная 2
-          
-          p На сегодняшний день можно с полной ответственностью утверждать, что мы готовы справиться с задачей любой степени сложности, ведь изготовление эксклюзивной мебели стало для нас главным делом всей жизни. Наши сотрудники, имеющие многолетний опыт работы, регулярно посещают профессиональные семинары и тренинги, направленные на повышение квалификации. Такой подход к подготовке персонала позволяет нам всегда предоставлять услуги класса люкс, выполняя все пожелания Клиентов точно и в срок.
+        
+        // About
+        section.about
+          .container
+
+            .about__wrapper
+              .row
+                .col-md-4.col-sm-3.hidden-xs
+                  .about__thumb
+                    img(src="./tmp/about.png", alt="")
+                .col-md-8.col-sm-9
+                  .about__content
+                    h1 О компании
+                    p.introtext Компания ИП «Фомин» производит на заказ качественную мебель и другие предметы интерьера, которые с полным правом можно назвать художественными произведениями. 
+
+                    .hidden-sm.visible-xs
+                      p Нашей мебелью приятно и любоваться и пользоваться, а срок ее службы измеряется десятилетиями. Каждое изделие изготавливается по уникальной технологии из единого массива дерева. Ценные породы древесины обрабатываются на самом современном оборудовании, комплектующие для которого поставляют такие известные производители, как «Blum», «AGB», «Sayerlack», «Bouhmans». В зависимости от того, какая порода дерева будет обрабатываться, мы подбираем индивидуальную технологию.
+
+                      .clear
+
+                      a(href="#!").about__more Читать подробнее
+                        i.ion-ios-arrow-thin-right
+              
+              .row
+                .col-xs-12
+                  .about__content.visible-sm.hidden-xs
+                    p Нашей мебелью приятно и любоваться и пользоваться, а срок ее службы измеряется десятилетиями. Каждое изделие изготавливается по уникальной технологии из единого массива дерева. Ценные породы древесины обрабатываются на самом современном оборудовании, комплектующие для которого поставляют такие известные производители, как «Blum», «AGB», «Sayerlack», «Bouhmans». В зависимости от того, какая порода дерева будет обрабатываться, мы подбираем индивидуальную технологию.
+
+                    .clear
+
+                    a(href="#!").about__more Читать подробнее
+                      i.ion-ios-arrow-thin-right
 
       
       include ./_include/_footer
