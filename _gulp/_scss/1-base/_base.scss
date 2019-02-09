@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  &::after, &::before {
+    box-sizing: border-box;
+  }
 }  
 
 // Basic Styles
@@ -39,15 +42,16 @@ h3,
 h4,
 h5,
 h6 {
-  color: $primary-color;
-  font-weight: bold;
+  color: $color-add1;
+  font-weight: 400;
   text-decoration: none;
   margin: 0 0 15px 0;
+  font-family: $font-neumann;
 }
 
 .h1,
 h1 {
-  font-size: 21px;
+  font-size: 60px;
   line-height: 1.05;
   letter-spacing: -1px;
   margin-bottom: 25px;
@@ -55,9 +59,9 @@ h1 {
 
 .h2,
 h2 {
-  font-size: 18px;
+  font-size: 40px;
   line-height: 1.14;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .h3,
@@ -305,5 +309,11 @@ ol li {
   }
   &--white {
     color: $color-white !important;
+  }
+}
+
+.visible {
+  &-sm {
+    display: none !important;
   }
 }

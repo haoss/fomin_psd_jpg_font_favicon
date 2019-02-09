@@ -5,29 +5,39 @@
   padding: 0 15px;
   margin-bottom: 0;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 700;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   touch-action: manipulation;
   cursor: pointer;
   user-select: none;
-  background-image: none;
-  background-color: $color-gray;
-  border: 1px solid $color-white;
-  border-radius: 3px;
+  border: 1px solid $color-add2;
+  border-radius: 35px;
   height: 40px;
+  text-transform: uppercase;
   line-height: 40px;
+  color: $color-white;
   text-decoration: none;
+  background: $color-add2;
   transition: all 0.35s;
+  box-shadow: 0 6px 25px rgba($color-add2,.77);
 
   &:hover, &:focus, &:active {
     outline: none;
+    box-shadow: none;
+    background: $color-add1;
+    border-color: $color-add1;
   }
 
   &--default {
     color: #333;
     background-color: $color-white;
     border-color: $color-gray;
+  }
+
+  &--block {
+    width: 100%;
+    display: block;
   }
 }

@@ -1,6 +1,78 @@
 // Footer
 footer.footer
-  .container
-    
-    div &copy; 2018
-  
+
+  // Feedback
+  .feedback
+    .container
+
+      .feedback__form
+        div
+          .feedback__form-title Профессиональная консультация. 
+          form(action="")
+            .row
+              .col-sm-6
+                .form-group
+                  input(type="text" placeholder="Номер телефона").form-control
+              .col-sm-6
+                .form-group
+                  button(type="button").btn.btn--block ОТправить
+            .clear5
+          .feedback__form-info Нажав кнопку “Отправить”, вы подтверждаете, что соглашаетесь с 
+            a(href="#!") пользовательским соглашением
+            |  и принимаете его условия.
+
+      //-.feedback__form
+        div
+          .feedback__form-title Спасибо за Ваш запрос!
+          .text-center
+            p.feedback__form-text В ближайшее время наши специалисты свяжутся с вами для обсуждения деталей.
+            .feedback__form-info Данная форма автоматически сама закроется через 15 секунд.
+
+  .footer__top
+    .container
+
+      .footer__top-row
+        div.footer__top-div1
+          .footer__address г. Москва, 
+            br
+            | ул. Первая деловая 1
+            br
+            | офис 2
+        div.footer__top-div2
+          ul.footer__ul
+            li
+              a(href="#!") Производство
+            li
+              a(href="#!") Продукция
+            li
+              a(href="#!") Проекты
+        div.footer__top-div3
+          ul.footer__ul
+            li
+              a(href="#!") Реставрация
+            li
+              a(href="#!") О нас
+            li
+              a(href="#!") Контакты
+        div.footer__top-div4
+          .footer__feedback
+            div тел. 
+              a(href="tel:") 8 (903) 581-25-82
+            div моб. 
+              a(href="tel:") 8 (903) 581-25-82 
+            div
+              a(href="mailto:") ipfomin@inbox.ru
+
+  .footer__bottom
+    .container
+
+      .footer__bottom-row
+        .footer__copyright 2008 - 2018. Все права защищены
+        .footer__links
+          div
+            a(href="#!") Согласие с рассылкой
+          div
+            a(href="#!") Политика конфиденциальности
+          div
+            a(href="#!") Отказ от ответственности
+

@@ -1,0 +1,29 @@
+.mobile
+  -var navigation = { 'Производство': '#', 'Продукция': '#', 'Проекты': '#', 'Реставрация': '#', 'О нас': '#', 'Контакты': '#'};
+
+  .mobile__header
+    button.mobile__btn.hamburger.hamburger--spin(type='button') меню сайта
+      span.hamburger-box
+        span.hamburger-inner
+  .mobile__body
+
+    nav.mobile__navigation(role="navigation")
+      ul
+        each val, key in navigation
+          if active === key
+            li.active
+              a(href=val, title=key)= key
+          else
+            li
+              a(href=val, title=key)= key
+    
+    .mobile__phone
+      div
+        a(href="tel:") 8 (800) 581-25-82
+      div
+        a(href="tel:") 8 (903) 581-25-82
+
+    .mobile__email
+      a(href="mailto:") ipfomin@inbox.ru
+
+.body__shadow

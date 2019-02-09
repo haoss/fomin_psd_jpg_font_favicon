@@ -1,4 +1,119 @@
 /* footer */
 .footer {
-  background-color: $color-gray;
+  background: $color-white url('../img/footer.jpg') bottom center repeat-x;
+
+  &__ul {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    &>li {
+      list-style: none;
+      margin: 0 0 5px 0;
+      position: relative;
+      padding-left: 13px;
+      &::before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid $color-add1;
+      }
+      &>a, &>span {
+        color: $primary-color;
+        text-decoration: none;
+        position: relative;
+        &::after, &::before {
+          position: absolute;
+          height: 1px;
+          width: 30px;
+          content: '';
+          background: $color-add1;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.35s;
+        }
+        &::before {
+          top: 0;
+          right: 0;
+        }
+        &::after {
+          left: 0;
+          bottom: 0;
+        }
+      }
+      &>a {
+        &:hover {
+          color: $color-add1;
+          &::after,&::before {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  &__address {
+    line-height: 26px;
+  }
+
+  &__feedback {
+    &>div {
+      line-height: 26px;
+      white-space: nowrap;
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        &:hover {
+          color: $color-add1;
+        }
+      }
+    }
+  }
+
+  &__top {
+    font-family: $font-neumann;
+    font-size: 14px;
+    margin-bottom: 25px;
+    &-row {
+      display: flex;
+      margin: 0 -15px;
+      &>div {
+        padding: 0 15px;
+        width: 25%;
+      }
+    }
+  }
+
+  &__bottom {
+    color: #858585;
+    font-size: 12px;
+    a {
+      color: #858585;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-row {
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      align-items: center;
+      font-weight: 400;
+    }
+  }
+  &__links {
+    display: flex;
+    &>div {
+      &+div {
+        padding-left: 25px;
+      }
+    }
+  }
 }
