@@ -6,7 +6,18 @@
 @import "1-base/_variables.scss";
 @import "1-base/_base.scss";
 
-@import "3-modules/hamburgers/hamburgers.scss";
+$hamburger-padding-x : 0px !default;
+$hamburger-padding-y : 0px !default;
+$hamburger-layer-width : 11px !default;
+$hamburger-layer-height : 1px !default;
+$hamburger-layer-spacing : 2px !default;
+$hamburger-layer-color : $color-white !default;
+$hamburger-layer-border-radius : 0px !default;
+$hamburger-hover-opacity : 1 !default;
+$hamburger-hover-transition-duration : 0.15s !default;
+$hamburger-hover-transition-timing-function: linear !default;
+
+@import "../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "2-layout/_buttons.scss";
 @import "2-layout/_forms.scss";
 @import "2-layout/_menu.scss";
