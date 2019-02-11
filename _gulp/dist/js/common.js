@@ -26,8 +26,9 @@ $(document).on('ready', function(){
     $(this).magnificPopup({
       delegate: '.gallery-item',
       type: 'image',
-      gallery:{
-        enabled:true
+      gallery: {
+        enabled: true,
+        tCounter: '%curr% из %total%'
       },
       zoom: {
         enabled: true, // By default it's false, so don't forget to enable it
@@ -77,14 +78,106 @@ $(document).on('ready', function(){
   });
 
   mobileBtn();
-  mainSliderTop();
 
   $('.gallery__carousel-wrapper').slick({
     // infinite: true,
     slidesToShow: 3,
     slidesToScroll: 2,
     centerMode: true,
-    centerPadding: '190px',
+    centerPadding: '290px',
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    pauseOnFocus: false,
+    prevArrow: '<button type="button" class="slick-prev"><i class="ion-android-arrow-back"></i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="ion-android-arrow-forward"></i></button>',
+    responsive: [
+      {
+        breakpoint: 1800,
+        settings: {
+          centerPadding: '250px'
+        }
+      }, {
+        breakpoint: 1500,
+        settings: {
+          centerPadding: '150px'
+        }
+      }, {
+        breakpoint: 1300,
+        settings: {
+          centerPadding: '50px'
+        }
+      }, {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: '50px',
+          slidesToShow: 2
+        }
+      }, {
+        breakpoint: 992,
+        settings: {
+          centerPadding: '0px',
+          slidesToShow: 2
+        }
+      }, {
+        breakpoint: 768,
+        settings: {
+          centerPadding: '100px',
+          slidesToShow: 1
+        }
+      }, {
+        breakpoint: 650,
+        settings: {
+          centerPadding: '50px',
+          slidesToShow: 1
+        }
+      }, {
+        breakpoint: 580,
+        settings: {
+          centerPadding: '0px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+
+  $('.main-slider__wrapper').slick({
+    infinite: true,
+    dots: false,
+    arrows: true,
+    centerMode: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerPadding: '359px',
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    pauseOnFocus: false,
+    prevArrow: '<button type="button" class="slick-prev"><i class="ion-android-arrow-back"></i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="ion-android-arrow-forward"></i></button>',
+    responsive: [
+      {
+        breakpoint: 1800,
+        settings: {
+          centerPadding: '250px'
+        }
+      }, {
+        breakpoint: 1500,
+        settings: {
+          centerPadding: '150px'
+        }
+      }, {
+        breakpoint: 1300,
+        settings: {
+          centerPadding: '50px'
+        }
+      }, {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: '0px'
+        }
+      }
+    ]
   })
 
   // Chrome Smooth Scroll
@@ -234,45 +327,4 @@ function mobileBtn() {
       body.removeAttr('style');
     }
   });
-}
-
-function mainSliderTop(){
-  $('.main-slider__wrapper').slick({
-    infinite: true,
-    dots: false,
-    arrows: true,
-    centerMode: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerPadding: '359px',
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    pauseOnFocus: false,
-    prevArrow: '<button type="button" class="slick-prev"><i class="ion-android-arrow-back"></i></button>',
-    nextArrow: '<button type="button" class="slick-next"><i class="ion-android-arrow-forward"></i></button>',
-    responsive: [
-      {
-        breakpoint: 1800,
-        settings: {
-          centerPadding: '250px'
-        }
-      },{
-        breakpoint: 1500,
-        settings: {
-          centerPadding: '150px'
-        }
-      },{
-        breakpoint: 1300,
-        settings: {
-          centerPadding: '50px'
-        }
-      }, {
-        breakpoint: 1200,
-        settings: {
-          centerPadding: '0px'
-        }
-      }
-    ]
-  })
 }

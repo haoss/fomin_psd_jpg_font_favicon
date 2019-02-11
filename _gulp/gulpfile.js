@@ -38,7 +38,7 @@ gulp.task('pug', () =>
 // Sass
 gulp.task('scss', function () {
   return gulp.src('_scss/main.scss')
-    .pipe(wait(200))
+    .pipe(wait(500))
     .pipe(plumber())
     .pipe(plugins.sourcemaps.init())
     .pipe(scss({
