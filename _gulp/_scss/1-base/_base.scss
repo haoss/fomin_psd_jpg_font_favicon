@@ -141,6 +141,19 @@ a.link {
   &:active {
     text-decoration: none;
   }
+  &__more {
+    color: $color-add1;
+    text-decoration: none;
+    font-size: 14px;
+    &:hover {
+      text-decoration: underline;
+    }
+    [class*='ion'] {
+      margin-left: 5px;
+      font-size: 18px;
+      vertical-align: -2px;
+    }
+  }
 }
 
 .container {
@@ -317,4 +330,10 @@ ol li {
   &-sm {
     display: none !important;
   }
+}
+
+.hidden {
+  opacity: 0 !important; 
+  visibility: hidden !important;
+  display: none !important;
 }

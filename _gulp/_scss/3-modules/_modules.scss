@@ -24,6 +24,15 @@
   &__document {
     padding-bottom: 50px;
   }
+  &__about {
+    &-more {
+      p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
 }
 
 .main-slider {
@@ -394,17 +403,7 @@
       width: 401px;
     }
   }
-  &__more {
-    color: $color-add1;
-    text-decoration: none;
-    font-size: 14px;
-    &:hover {
-      text-decoration: underline;
-    }
-    [class*='ion'] {
-      margin-left: 5px;
-    }
-  }
+  
 }
 
 .introtext {
@@ -720,6 +719,54 @@
         content: '';
         right: 0;
       }
+    }
+  }
+}
+
+.restoration {
+  margin-bottom: 5px;
+  &__wrapper {
+    display: flex;
+    &>div {
+      width: 50%;
+    }
+  }
+  &__img {
+    position: relative;
+    z-index: 5;
+    width: 554px;
+    img {
+      position: relative;
+      z-index: 5;
+      display: block;
+      &+img {
+        position: absolute;
+        z-index: 0;
+        top: 18px;
+        right: -9px;
+        opacity: 0.5;
+        top: 18px;
+        height: calc(100% - 18px);
+        &+img {
+          height: calc(100% - 36px);
+          right: -19px;
+          top: 36px;
+        }
+      }
+    }
+  }
+  &__content {
+    width: 674px;
+    border: 8px solid $color-add2;
+    float: right;
+    margin-top: 50px;
+    font-size: 45px;
+    font-family: $font-neumann;
+    font-variant-caps: small-caps;
+    color: $color-add1;
+    padding: 50px 90px 45px 145px;
+    &>div {
+      line-height: 1.2;
     }
   }
 }

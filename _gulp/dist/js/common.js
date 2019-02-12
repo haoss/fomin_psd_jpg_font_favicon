@@ -78,6 +78,7 @@ $(document).on('ready', function(){
   });
 
   mobileBtn();
+  showText();
 
   $('.gallery__carousel-wrapper').slick({
     // infinite: true,
@@ -327,4 +328,16 @@ function mobileBtn() {
       body.removeAttr('style');
     }
   });
+}
+
+function showText() {
+  var btn = $('.j-show');
+  var text = btn.next();
+
+  btn.on('click', function() {
+    $(this).hide();
+    if (text.hasClass('hidden')) {
+      text.removeClass('hidden');
+    }
+  })
 }
