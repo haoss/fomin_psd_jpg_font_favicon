@@ -315,6 +315,15 @@
         width: 50%;
       }
     }
+    &__product {
+      flex-direction: column;
+      &>div {
+        width: 100%;
+      }
+      .why__block {
+        margin: 0 -15px 40px -15px;
+      }
+    }
   }
   .feedback {
     &__form {

@@ -269,8 +269,7 @@ ol li {
 /* no padding no margin */
 .no {
   &--p {
-      padding: 0 !important;
-    }
+    padding: 0 !important;
     &-top {
       padding-top: 0 !important;
     }
@@ -283,9 +282,10 @@ ol li {
     &-right {
       padding-right: 0 !important;
     }
+  }
+  
   &--m {
-      margin: 0 !important;
-    }
+    margin: 0 !important;
     &-top {
       margin-top: 0 !important;
     }
@@ -298,12 +298,13 @@ ol li {
     &-right {
       margin-right: 0 !important;
     }
+  }    
   &--b {
-      background: none !important;
-    }
+    background: none !important;
     &-image {
       background-image: none !important;
     }
+  }  
   &--border {
     border: 0 !important;
   }
