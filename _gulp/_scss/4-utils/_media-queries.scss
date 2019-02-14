@@ -210,6 +210,25 @@
       padding-right: 10px;
     }
   }
+  .contacts {
+    max-width: 838px;
+    padding: 40px;
+    &__wrapper {
+      &>div {
+        min-width: 265px;
+      }
+    }
+  }
+  .projects {
+    
+    &__block {
+      &>div {
+        &:last-child {
+          width: 330px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -277,11 +296,6 @@
         top: 10px;
         left: 15px;
       }
-    }
-  }
-  .hidden {
-    &-sm {
-      display: none !important;
     }
   }
   .visible {
@@ -360,6 +374,40 @@
       margin-top: -85px;
       padding-top: 125px;
       padding-left: 50px;
+    }
+  }
+  .contacts {
+    max-width: 655px;
+    &__wrapper {
+      flex-direction: column;
+      &>div {
+        &+div {
+          margin-top: 30px;
+        }
+      }
+    }
+    &__block {
+      max-width: inherit;
+    }
+    &__table {
+      max-width: 70%;
+    }
+  }
+  .projects {
+    &__block {
+      &>div {
+        &:last-child {
+          width: 260px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .hidden {
+    &-sm {
+      display: none !important;
     }
   }
 }
@@ -554,6 +602,41 @@
       padding-right: 20px;
     }
   }
+  .contacts {
+    max-width: inherit;
+    padding: 30px;
+    &__table {
+      max-width: inherit;
+    }
+  }
+  .projects {
+    &__block {
+      flex-direction: column;
+      &>div {
+        &:last-child {
+          width: 100%;
+          padding: 30px 15px 0 15px;
+        }
+        .btn {
+          position: relative;
+          bottom: inherit;
+          width: 100%;
+          max-width: 350px;
+          margin: 0 auto;
+          left: inherit;
+          right: inherit;
+          display: block;
+        }
+      }
+      &-img {
+        margin-right: -6px;
+        width: calc(100% + 12px);
+      }
+      &-title {
+        font-size: 40px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 479px) {
@@ -656,6 +739,47 @@
       font-size: 25px;
       padding-left: 25px;
       padding-bottom: 30px;
+    }
+  }
+  .contacts {
+    &__table {
+      display: block;
+      &-row {
+        display: block;
+        margin-bottom: 10px;
+        &>div {
+          display: block;
+          &:last-child {
+            line-height: 1;
+            width: 100%;
+            padding-left: 30px;
+          }
+        }
+      }
+    }
+    &__wrapper {
+      &>div {
+        min-width: inherit;
+      }
+    }
+  }
+  .projects {
+    &__block {
+      &-title {
+        font-size: 30px;
+      }
+    }
+    &__total {
+      flex-direction: column;
+      &>div {
+        &:first-child {
+          order: 2
+        }
+        &:last-child {
+          padding-bottom: 10px;
+          order: 1;
+        }
+      }
     }
   }
 }

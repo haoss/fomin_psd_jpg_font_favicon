@@ -31,10 +31,9 @@ $(document).on('ready', function(){
         tCounter: '%curr% из %total%'
       },
       zoom: {
-        enabled: true, // By default it's false, so don't forget to enable it
+        enabled: false, // By default it's false, so don't forget to enable it
 
         duration: 300, // duration of the effect, in milliseconds
-        easing: 'ease-in-out', // CSS transition easing function
 
         // The "opener" function should return the element from which popup will be zoomed in
         // and to which popup will be scaled down
@@ -179,7 +178,72 @@ $(document).on('ready', function(){
         }
       }
     ]
-  })
+  });
+
+  var swiper = new Swiper('.gallery__product .swiper-container', {
+    pagination: {
+      el: '.gallery__product .swiper-pagination',
+      type: 'fraction',
+      formatFractionCurrent: function (number) {
+        if (number > 0 && number < 10) {
+          return '0' + number
+        } else {
+          return number
+        }
+      },
+      formatFractionTotal: function (number) {
+        if (number > 0 && number < 10) {
+          return '0' + number
+        } else {
+          return number
+        }
+      },
+      renderFraction: function (currentClass, totalClass) {
+        return '<span class="' + currentClass + '"></span>' +
+          '/' +
+          '<span class="' + totalClass + '"></span>';
+      }
+    },
+    navigation: {
+      nextEl: '.gallery__product .swiper-button-next',
+      prevEl: '.gallery__product .swiper-button-prev',
+    },
+    autoplay: {
+      delay: 3000,
+    },
+    loop: true
+  });
+
+  $('.last-projects__carousel').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          pauseOnHover: false,
+          pauseOnFocus: false,
+        }
+      },{
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          pauseOnHover: false,
+          pauseOnFocus: false
+        }
+      }
+    ]
+  });
 
   // Chrome Smooth Scroll
   try {

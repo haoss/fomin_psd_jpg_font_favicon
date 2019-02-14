@@ -123,14 +123,14 @@ hr {
 a,
 .link {
   color: $link-color;
-  text-decoration: underline;
+  text-decoration: none;
   outline: none;
   transition: color 0.35s, background 0.35s, border 0.35s;
   &:hover,
   &:focus,
   &:active {
     color: $link-color;
-    text-decoration: none;
+    text-decoration: underline;
     outline: none;
   }
 }
@@ -139,7 +139,7 @@ a.link {
   &:hover,
   &:focus,
   &:active {
-    text-decoration: none;
+    text-decoration: underline;
   }
   &__more {
     color: $color-add1;
@@ -325,10 +325,16 @@ ol li {
   &--white {
     color: $color-white !important;
   }
+  &--add1 {
+    color: $color-add1 !important;
+  }
+  &--add2 {
+    color: $color-add2 !important;
+  }
 }
 
 .visible {
-  &-sm {
+  &-lg, &-md, &-sm, &-xs {
     display: none !important;
   }
 }

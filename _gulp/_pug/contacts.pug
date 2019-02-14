@@ -1,0 +1,129 @@
+doctype
+
+html(lang="ru")
+  
+  -var active = 'Контакты' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Контакты' + ' - Мастерская художественной мебели фомина' //title страницы для генерации верстки  
+
+  include ./_include/_head
+
+  body
+
+    // Mobile navigation
+    include ./_include/_mobile
+    
+    .base
+    
+      // Preloader
+      include ./_include/_preloader
+      include ./_include/_header
+
+      // Breadcrumbs
+      .breadcrumbs
+        div
+          h1 Контакты
+
+          ul
+            li: a(href="#!") Мастерская мебели
+            li: span Название раздела
+      
+      // Content
+      .content
+        
+        // Document
+        .content__document
+          .container
+            p.introtext Компания ИП «Фомин» производит на заказ качественную мебель и другие предметы интерьера, которые с полным правом можно назвать художественными произведениями. 
+
+        .container
+
+          .contacts
+            .contacts__wrapper
+              div
+                .contacts__title По всем вопросам работы просим обращаться:
+
+                .contacts__table
+                  .contacts__table-row
+                    div
+                      .contacts__block
+                        i.ion-android-call
+                        a(href="tel:")
+                          strong 8 (903) 581-25-82
+                    div – Отдел продаж
+                  .contacts__table-row
+                    div
+                      .contacts__block
+                        i.ion-android-call
+                        a(href="tel:")
+                          strong 8 (903) 581-25-82
+                    div – Отдел реставрации
+
+                .contacts__table
+                  .contacts__table-row
+                    div
+                      .contacts__block
+                        i.ion-android-mail
+                        a(href="mailto:")
+                          strong info@ipfomin.ru
+                    div – Общая информация
+                  .contacts__table-row
+                    div
+                      .contacts__block
+                        i.ion-android-mail
+                        a(href="mailto:")
+                          strong reservations@ipfomin.ru 
+                    div – Бронирование работ
+
+              div
+                .contacts__title Расположение:
+
+                .contacts__block
+                  i.ion-ios-location
+                  strong Россия, Московская область, JGWV+VR Юго-Западный административный округ, ул. Введенского, 8, Москва, 117342
+
+          #map_canvas
+
+          // Google Map
+          script(src='https://maps.googleapis.com/maps/api/js?sensor=false')
+          script.
+            function initialize() {
+            var myLatlng = new google.maps.LatLng(55.6475464,37.5417423);
+            var map_options = {
+            zoom: 16,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: myLatlng,
+            scrollwheel: false,
+            disableDefaultUI: true
+            }
+            var map = new google.maps.Map(document.getElementById('map_canvas'), map_options)
+            var myIcon = new google.maps.MarkerImage('./img/map.png', null, null, null, new google.maps.Size(94,111));
+            var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              icon: myIcon
+            });
+            /* Remove if you dont want B/W Google Map */
+            /*
+            var styles = [
+            {
+            featureType: "all",
+            stylers: [
+            { saturation: -100 }
+            ]
+            }
+            ];
+            map.setOptions({styles: styles});
+            */
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+          // Google Map Ends!
+
+        
+      
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+    

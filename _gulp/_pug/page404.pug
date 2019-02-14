@@ -1,0 +1,57 @@
+doctype
+
+html(lang="ru")
+  
+  -var active = 'Страница 404' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Страница 404' + ' - Мастерская художественной мебели фомина' //title страницы для генерации верстки  
+
+  include ./_include/_head
+
+  body
+
+    // Mobile navigation
+    include ./_include/_mobile
+    
+    .base
+    
+      // Preloader
+      include ./_include/_preloader
+      include ./_include/_header
+
+      // Breadcrumbs
+      .breadcrumbs
+        div
+          h1 Страница не найдена
+
+          ul
+            li: a(href="#!") Мастерская мебели
+            li: span Название раздела
+      
+      // Content
+      .content
+        
+        // Document
+        .content__document.no--p-bottom
+          .container
+            p.introtext Страница потерялась... У нас много эксклюзивных товаров, посмотрите другие разделы... А мы пока ищем страницу!
+
+            p Что-то пошло не так. Возможно, вы ошиблись, набирая адрес в строке браузера — так бывает. Если вы уверены, что адрес набран верно, то страница, скорее всего, была удалена и ее больше нет.
+            p 
+              strong Но не отчаивайтесь! 
+              | Смело 
+              a(href="#!") пишите нам
+              |  за помощью или перейдите на 
+              a(href="#!") главную страницу
+              | . 
+            
+            p
+              img(src="./img/page404.jpg", alt="")
+        
+      
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+    
