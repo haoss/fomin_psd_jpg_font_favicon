@@ -696,6 +696,140 @@
       }
     }
   }
+  &__product {
+    position: relative;
+    margin: 0 auto 10px;
+    max-width: 555px;
+    .swiper {
+      &-wrapper {
+        padding-right: 14px;
+        margin-bottom: 30px;
+      }
+      &-pagination {
+        text-align: left;
+        display: inline-block !important;
+        padding: 0 25px;
+        color:#d3d3d3;
+        font-size: 26px;
+        bottom: 0;
+        width: auto;
+        line-height: 1;
+        font-weight: 400;
+        .swiper-pagination {
+          &-total {
+            font-size: 13px;
+            color: #d3d3d3;
+          }
+          &-current {
+            font-size: 24px;
+            color: $color-add1;
+          }
+        }
+      }
+      &-button-next, &-button-prev {
+        background: none;
+        top: inherit;
+        font-family: $font-ionicons;
+        width: auto;
+        height: auto;
+        margin: 0;
+        font-size: 15px;
+        color: $color-add1;
+        line-height: 1;
+        left: 0;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          
+        }
+      }
+      &-button-next {
+        bottom: 1px;
+        right: inherit;
+        left: 87px;
+        &::before {
+          content: "\f3d6";
+        }
+        
+      }
+      &-button-prev {
+        margin-top: -19px;
+        
+        &::before {
+          content: "\f3d5";
+        }
+      }
+      &-slide-active {
+        .gallery-item {
+          img {
+            &+img {
+              opacity: 0.5;
+              visibility: visible;
+              &+img {
+                opacity: 0.2;
+              }
+            }
+          }
+        }
+      }
+    }
+    .gallery-item {
+      position: relative;
+      display: inline-block;
+      transition: all 0.35s;
+      vertical-align: middle;
+      margin-bottom: 12px;
+      &:hover {
+        & > span {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      & > span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 10px solid rgba($color-white, 0.7);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.35s;
+        svg {
+          width: 50px;
+          height: 50px;
+          .path-color {
+            fill: $color-white;
+          }
+        }
+      }
+      img {
+        position: relative;
+        z-index: 5;
+        display: block;
+        &+img {
+          position: absolute;
+          z-index: 0;
+          bottom: -6px;
+          right: 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 1.5s;
+          // opacity: 0.5;
+          height: calc(100% - 126px);
+          &+img {
+            height: calc(100% - 140px);
+            bottom: -12px;
+            // opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
 }
 
 .catalog {

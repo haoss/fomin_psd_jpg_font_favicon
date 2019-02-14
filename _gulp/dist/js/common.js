@@ -31,10 +31,9 @@ $(document).on('ready', function(){
         tCounter: '%curr% из %total%'
       },
       zoom: {
-        enabled: true, // By default it's false, so don't forget to enable it
+        enabled: false, // By default it's false, so don't forget to enable it
 
         duration: 300, // duration of the effect, in milliseconds
-        easing: 'ease-in-out', // CSS transition easing function
 
         // The "opener" function should return the element from which popup will be zoomed in
         // and to which popup will be scaled down
@@ -179,7 +178,41 @@ $(document).on('ready', function(){
         }
       }
     ]
-  })
+  });
+
+  var swiper = new Swiper('.gallery__product .swiper-container', {
+    pagination: {
+      el: '.gallery__product .swiper-pagination',
+      type: 'fraction',
+      formatFractionCurrent: function (number) {
+        if (number > 0 && number < 10) {
+          return '0' + number
+        } else {
+          return number
+        }
+      },
+      formatFractionTotal: function (number) {
+        if (number > 0 && number < 10) {
+          return '0' + number
+        } else {
+          return number
+        }
+      },
+      renderFraction: function (currentClass, totalClass) {
+        return '<span class="' + currentClass + '"></span>' +
+          '/' +
+          '<span class="' + totalClass + '"></span>';
+      }
+    },
+    navigation: {
+      nextEl: '.gallery__product .swiper-button-next',
+      prevEl: '.gallery__product .swiper-button-prev',
+    },
+    // autoplay: {
+      // delay: 3000,
+    // },
+    // loop: true
+  });
 
   // Chrome Smooth Scroll
   try {
