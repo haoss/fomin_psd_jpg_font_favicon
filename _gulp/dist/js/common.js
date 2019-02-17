@@ -245,6 +245,49 @@ $(document).on('ready', function(){
     ]
   });
 
+  var galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    direction: 'vertical'
+  });
+  var galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.gallery-top .swiper-button-next',
+      prevEl: '.gallery-top .swiper-button-prev',
+    },
+    loop: true,
+    thumbs: {
+      swiper: galleryThumbs
+    },
+    pagination: {
+      el: '.gallery-top .swiper-pagination',
+      type: 'fraction',
+      formatFractionCurrent: function (number) {
+        if (number > 0 && number < 10) {
+          return '0' + number
+        } else {
+          return number
+        }
+      },
+      formatFractionTotal: function (number) {
+        if (number > 0 && number < 10) {
+          return '0' + number
+        } else {
+          return number
+        }
+      },
+      renderFraction: function (currentClass, totalClass) {
+        return '<span class="' + currentClass + '"></span>' +
+          '/' +
+          '<span class="' + totalClass + '"></span>';
+      }
+    }
+  });
+
   // Chrome Smooth Scroll
   try {
     $.browserSelector();
