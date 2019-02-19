@@ -80,6 +80,7 @@
     font-family: $font-neumann;
     font-size: 14px;
     margin-bottom: 25px;
+    font-weight: bold;
     &-row {
       display: flex;
       margin: 0 -15px;
@@ -114,6 +115,11 @@
       &+div {
         padding-left: 25px;
       }
+    }
+    img {
+      display: inline-block;
+      vertical-align: -3px;
+      margin-left: 10px;
     }
   }
 }

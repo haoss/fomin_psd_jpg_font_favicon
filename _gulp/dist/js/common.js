@@ -78,6 +78,7 @@ $(document).on('ready', function(){
 
   mobileBtn();
   showText();
+  phoneMask();
 
   $('.gallery__carousel-wrapper').slick({
     // infinite: true,
@@ -148,7 +149,7 @@ $(document).on('ready', function(){
     centerMode: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerPadding: '359px',
+    centerPadding: '200px',
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
@@ -157,11 +158,47 @@ $(document).on('ready', function(){
     nextArrow: '<button type="button" class="slick-next"><i class="ion-android-arrow-forward"></i></button>',
     responsive: [
       {
-        breakpoint: 1800,
+        breakpoint: 1500,
         settings: {
-          centerPadding: '250px'
+          centerPadding: '150px'
         }
       }, {
+        breakpoint: 1300,
+        settings: {
+          centerPadding: '50px'
+        }
+      }, {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: '0px'
+        }
+      }
+    ]
+  });
+
+  var $slickElement = $('.last-works__wrapper');
+  var $slickElementPagination = $('.last-works__pagination');
+  $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+    var i = (currentSlide ? currentSlide : 0) + 1;
+    $slickElementPagination.html('<span class="current">' + ((i > 0 && i <10) ? "0" + i : i) + '</span>/<span class="total">' + slick.slideCount + '</span>');
+  });
+  $slickElement.slick({
+    infinite: true,
+    dots: false,
+    arrows: true,
+    centerMode: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerPadding: '200px',
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: '.last-works-button-prev',
+    nextArrow: '.last-works-button-next',
+    pauseOnHover: true,
+    pauseOnFocus: false,
+    responsive: [
+      {
         breakpoint: 1500,
         settings: {
           centerPadding: '150px'
@@ -247,7 +284,7 @@ $(document).on('ready', function(){
 
   var galleryThumbs = new Swiper('.gallery-thumbs', {
     spaceBetween: 10,
-    slidesPerView: 4,
+    slidesPerView: 5,
     freeMode: true,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
@@ -446,5 +483,12 @@ function showText() {
     if (text.hasClass('hidden')) {
       text.removeClass('hidden');
     }
+  })
+}
+
+function phoneMask() {
+  var phone = $('.phone-mask');
+  phone.each(function () {
+    $(this).mask("+7 (999) 999-99-99");
   })
 }

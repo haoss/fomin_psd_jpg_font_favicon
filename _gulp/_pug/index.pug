@@ -104,6 +104,38 @@ html(lang="ru")
           .container
             
             .h1 Последние работы
+
+          .last-works__navigation
+            .container
+              .last-works__pagination
+              button(type="button").last-works-button-next
+                b следующая
+                span наша работа
+              button(type="button").last-works-button-prev
+                b предыдущая
+                span наша работа
+
+          .last-works__wrapper.gallery
+            - for (var i=0; i<5; i++) {
+            div
+              a.last-works__block.gallery-item(href="./tmp/last-works/last-works-1.png")
+                img(src="./tmp/last-works/last-works-1.png" alt="")
+                .last-works__content
+                  .last-works__title Кони деревянные
+                  p г.Москва
+              a.last-works__block.gallery-item(href="./tmp/last-works/last-works-2.png")
+                img(src="./tmp/last-works/last-works-2.png" alt="")
+                .last-works__content
+                  .last-works__title Гардероб
+                    i.ion-ios-arrow-thin-right
+                  p г.Курск
+              a.last-works__block.gallery-item(href="./tmp/last-works/last-works-3.png")
+                img(src="./tmp/last-works/last-works-3.png" alt="")
+                .last-works__content
+                  .last-works__title Шкаф
+                    i.ion-ios-arrow-thin-right
+                  p г.Орел
+            - }
       
       include ./_include/_footer
       //- div(style="height: 1000px; background-color: #000")
