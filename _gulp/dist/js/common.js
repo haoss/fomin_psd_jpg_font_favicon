@@ -163,7 +163,7 @@ $(document).on('ready', function(){
           centerPadding: '150px'
         }
       }, {
-        breakpoint: 1300,
+        breakpoint: 1440,
         settings: {
           centerPadding: '50px'
         }
@@ -204,7 +204,7 @@ $(document).on('ready', function(){
           centerPadding: '150px'
         }
       }, {
-        breakpoint: 1300,
+        breakpoint: 1440,
         settings: {
           centerPadding: '50px'
         }

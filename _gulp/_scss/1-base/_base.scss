@@ -42,12 +42,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color-add1;
   font-weight: 400;
   text-decoration: none;
   margin: 0 0 15px 0;
-  font-family: $font-neumann;
-  font-variant: small-caps;
 }
 
 .h1,
@@ -56,6 +53,9 @@ h1 {
   line-height: 1.05;
   letter-spacing: -1px;
   margin-bottom: 25px;
+  font-family: $font-neumann;
+  font-variant: small-caps;
+  color: $color-add1;
 }
 
 .h2,
@@ -63,23 +63,26 @@ h2 {
   font-size: 40px;
   line-height: 1.14;
   margin-bottom: 30px;
+  font-family: $font-neumann;
+  font-variant: small-caps;
+  color: $color-add1;
 }
 
 .h3,
 h3 {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.38;
 }
 
 .h4,
 h4 {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.38;
 }
 
 .h5,
 h5 {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .h6,

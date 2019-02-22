@@ -23,13 +23,17 @@
   transition: all 0.35s;
   box-shadow: 0 6px 25px rgba($color-add2,.77);
 
-  &:hover, &:focus, &:active {
+  &:hover {
     outline: none;
     box-shadow: none;
     background: $color-add1;
     border-color: $color-add1;
     color: $color-white;
     text-decoration: none;
+  }
+  &:focus, &:active {
+    outline: none;
+    box-shadow: none;
   }
 
   &--default {
