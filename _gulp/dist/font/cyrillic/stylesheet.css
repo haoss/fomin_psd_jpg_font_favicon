@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'CyrillicOld';
+    src: url('subset-CyrillicOld.eot');
+    src: url('subset-CyrillicOld.eot?#iefix') format('embedded-opentype'),
+        url('subset-CyrillicOld.woff2') format('woff2'),
+        url('subset-CyrillicOld.woff') format('woff'),
+        url('subset-CyrillicOld.ttf') format('truetype'),
+        url('subset-CyrillicOld.svg#CyrillicOld') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
